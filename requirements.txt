@@ -1,0 +1,64 @@
+# CodeWeaverBot - Requirements
+# This file contains all the Python package dependencies needed to run CodeWeaverBot
+# Updated for secure coding standards and best practices
+
+# Core Dependencies
+# =================
+
+# GUI Automation Framework
+# PyAutoGUI provides cross-platform GUI automation capabilities for controlling
+# keyboard, mouse, and screen interactions with applications like VS Code for CodeWeaverBot
+pyautogui>=0.9.54,<1.0.0
+
+# Image Processing (required by PyAutoGUI for screenshot features)
+Pillow>=8.0.0,<11.0.0
+
+# Development and Security Dependencies
+# =====================================
+
+# Code Quality Tools (uncomment for development)
+# black>=21.0.0          # Code formatting
+# flake8>=3.8.0          # Code linting
+# mypy>=0.800            # Type checking
+# bandit>=1.7.0          # Security linting
+# safety>=1.10.0         # Dependency vulnerability checking
+
+# Testing Framework (uncomment for development)
+# pytest>=6.0.0         # Testing framework
+# pytest-cov>=2.10.0    # Coverage reporting
+
+# Enhanced Functionality (optional)
+# ==================================
+# opencv-python>=4.5.0  # Computer vision (for advanced screen recognition - future enhancement)
+# psutil>=5.8.0          # System monitoring (for process management - future enhancement)
+
+# Note: The following packages are part of Python's standard library
+# and do not need to be installed separately:
+# 
+# - logging       (structured logging and error tracking)
+# - pathlib       (modern path handling)
+# - typing        (type hints for better code quality)
+# - time          (timing and delays)
+# - random        (random selection and number generation) 
+# - subprocess    (process management for launching VS Code)
+# - os            (operating system interface and file operations)
+# - sys           (system-specific parameters and functions)
+# - datetime      (date and time calculations)
+
+# Platform-specific notes:
+# 
+# Windows:
+# - No additional dependencies required
+# - Ensure Visual Studio Code is installed and accessible via 'code' command
+# 
+# Linux:
+# - May require: sudo apt-get install python3-tk python3-dev
+# - For PyAutoGUI screen capture: sudo apt-get install scrot
+# - For PyAutoGUI GUI automation: sudo apt-get install python3-xlib
+# 
+# macOS:
+# - May require PyObjC for full PyAutoGUI functionality
+# - Install with: pip install pyobjc-core pyobjc
+# 
+# Installation command for CodeWeaverBot:
+# pip install -r requirements.txt
