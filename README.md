@@ -310,7 +310,15 @@ CodeWeaverBot/
 ├── requirements.txt            # Python dependencies (updated for security)
 ├── TECHNICAL_SPECIFICATION.md  # Detailed technical docs
 ├── SECURITY_CHECKLIST.md       # Security review and compliance checklist
+├── TESTING.md                  # Comprehensive testing documentation
 ├── codeweaver_bot.log          # Runtime logs (generated during execution)
+├── test_codeweaver_bot.py      # Main unit test suite
+├── test_security_performance.py # Security and performance tests
+├── run_tests.py                # Test runner script
+├── pytest.ini                 # pytest configuration
+├── .github/
+│   └── workflows/
+│       └── tests.yml           # CI/CD pipeline for automated testing
 └── generated_files/            # Auto-created directory
     ├── len_example_001.py      # Generated examples (when created)
     ├── str_example_002.py      # Generated examples (when created)
@@ -326,6 +334,15 @@ CodeWeaverBot/
 - **`SECURITY_CHECKLIST.md`**: Complete security review and compliance documentation
 - **`codeweaver_bot.log`**: Structured logging output for debugging and monitoring
 - **`generated_files/`**: Auto-created directory for all generated Python examples
+
+### Testing Files
+
+- **`test_codeweaver_bot.py`**: Comprehensive unit test suite covering all core functionality
+- **`test_security_performance.py`**: Security-focused and performance tests
+- **`run_tests.py`**: Test runner with command-line options
+- **`pytest.ini`**: pytest configuration for advanced testing
+- **`TESTING.md`**: Complete testing documentation and guide
+- **`.github/workflows/tests.yml`**: CI/CD pipeline for automated testing
 
 ## 🐍 Python Functions Covered
 
@@ -345,6 +362,74 @@ Each generated file includes:
 - Practical code examples
 - Expected output comments
 - Best practice demonstrations
+
+## 🧪 Testing
+
+CodeWeaverBot includes a comprehensive test suite to ensure code quality, security, and cross-platform compatibility.
+
+### Running Tests
+
+#### Quick Test Execution
+```bash
+# Run all tests
+python run_tests.py
+
+# Run with verbose output
+python run_tests.py --verbose
+
+# Run only security tests
+python run_tests.py --security-only
+```
+
+#### Platform-Specific Testing
+
+**🪟 Windows**
+```powershell
+# PowerShell
+python run_tests.py --verbose
+```
+
+**🐧 Linux**
+```bash
+# Install testing dependencies
+sudo apt-get install python3-tk python3-dev xvfb
+
+# Run tests with virtual display
+export DISPLAY=:99
+Xvfb :99 -screen 0 1024x768x24 &
+python3 run_tests.py --verbose
+```
+
+**🍎 macOS**
+```bash
+# Ensure PyObjC is installed
+pip install pyobjc-core pyobjc
+
+# Run tests
+python3 run_tests.py --verbose
+```
+
+### Test Coverage
+
+✅ **Unit Tests** (54 tests)
+- Configuration validation
+- File tracking and security
+- VS Code integration
+- Content generation
+- Environment validation
+
+✅ **Security Tests** (21 tests)
+- Path traversal prevention
+- Input validation
+- Content injection protection
+- Performance limits
+
+✅ **Integration Tests**
+- Cross-platform compatibility
+- Error handling robustness
+- Complete workflow validation
+
+For detailed testing information, see [`TESTING.md`](TESTING.md).
 
 ## ⚙️ Configuration Options
 

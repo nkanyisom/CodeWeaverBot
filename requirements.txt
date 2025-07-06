@@ -26,6 +26,13 @@ Pillow>=8.0.0,<11.0.0
 # Testing Framework (uncomment for development)
 # pytest>=6.0.0         # Testing framework
 # pytest-cov>=2.10.0    # Coverage reporting
+# unittest-xml-reporting>=3.0.0  # XML test reports
+# coverage>=5.0.0        # Code coverage analysis
+
+# Enhanced Testing Dependencies for CI/CD
+# mock>=4.0.0            # Advanced mocking capabilities (part of unittest.mock in Python 3.3+)
+# parameterized>=0.8.0   # Parameterized test cases
+# tox>=3.20.0           # Multi-environment testing
 
 # Enhanced Functionality (optional)
 # ==================================

@@ -262,7 +262,7 @@ def _fallback_vscode_launch() -> bool:
         logger.info("Fallback VS Code launch completed")
         return True
 
-    except pyautogui.PyAutoGUIException as e:
+    except (RuntimeError, Exception) as e:
         logger.error("PyAutoGUI error in fallback launch: %s", e)
         return False
     except (OSError, PermissionError) as e:
@@ -368,7 +368,7 @@ def write_function_improved(func_name: str, description: str, example: str) -> b
             logger.warning("File %s was not created successfully", filename)
             return False
 
-    except pyautogui.PyAutoGUIException as e:
+    except (RuntimeError, Exception) as e:
         logger.error("PyAutoGUI error writing function %s: %s", func_name, e)
         return False
     except (OSError, PermissionError) as e:
@@ -431,7 +431,7 @@ def run_bot_improved(vscode_already_open: bool = False) -> None:
         except KeyboardInterrupt:
             logger.info("CodeWeaverBot stopped by user.")
             break
-        except pyautogui.PyAutoGUIException as e:
+        except (RuntimeError, Exception) as e:
             logger.error("PyAutoGUI error: %s", e)
             failed_files += 1
             consecutive_failures += 1
@@ -479,7 +479,7 @@ def validate_environment() -> bool:
         # Check PyAutoGUI functionality
         try:
             pyautogui.position()  # Test basic PyAutoGUI functionality
-        except pyautogui.PyAutoGUIException as e:
+        except (RuntimeError, Exception) as e:
             logger.error("PyAutoGUI not functioning properly: %s", e)
             return False
 
